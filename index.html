@@ -22,9 +22,9 @@
             --gray: #7c7e80;
             --white: #fff;
 
-            --h2: 1.9rem;
-            --h3: 1.7rem;
-            --p-heading: 1.2rem;
+            --h2: 1.8rem;
+            --h3: 1.6rem;
+            --p-heading: 1rem;
             --a: .9rem;
         }
 /* <<<< NANO SECTION >>>> */
@@ -107,7 +107,7 @@
         }
         .carousel {
             position: relative;
-            padding-top: 33%;
+            padding-top: 31%;
         }
         .carousel__slide {
             position: relative;
@@ -139,9 +139,9 @@
             /* padding: .5rem; */
         }
         .carousel__slide-content p {
-            font-size: .8rem;
+            font-size: .75rem;
             color: var(--blue);
-            line-height: 1rem;
+            line-height: .9rem;
             padding: .8rem;
             flex-grow: 2;
             margin: 0;
@@ -149,12 +149,13 @@
         .carousel__slide-content h3 {
             font-size: .9rem;
             color: var(--white);
-            height: 15%;
+            height: 20%;
             padding-top: .5rem;
             margin: 0;
             width: 100%;
             background-color: var(--blue);
-            flex-grow: 1;
+            line-height: 1.1rem;
+            flex-grow: 1.;
             z-index: 11;
         }
         .carousel__prev,
@@ -206,14 +207,14 @@
         .carousel::after {
             content: "";
             z-index: 1;
-            background-color: rgba(15, 15, 48, 0.1 );
-            background-size: 1.5rem 1.5rem;
+            background-color: rgba(15, 15, 48, 0.08 );
+            background-size: .6rem .6rem;
             background-repeat: no-repeat;
             background-position: center center;
-            color: #fff;
-            font-size: 2.5rem;
-            line-height: 4rem;
-            text-align: center;
+            /* color: #fff; */
+            /* font-size: 2.5rem; */
+            /* line-height: 4rem; */
+            /* text-align: center; */
         }
         .carousel__navigation {
             position: absolute;
@@ -240,12 +241,12 @@
             background-color: rgb(70, 92, 153);
         }
         /*  << END OF CAROUSEL SECTION >> */
-
-/* <<<< END OF NANO SECTION >>>> */
-
-/* <<<< POWERHOUSE SECTION >>>> */
+        
+        /* <<<< END OF NANO SECTION >>>> */
+        
+        /* <<<< POWERHOUSE SECTION >>>> */
         .powerhouse {
-            padding: 20px;
+            padding: 20px 20px 30px;
             border-bottom: 1px solid var(--blue);
             margin:  1rem 0 0;
         }
@@ -267,7 +268,7 @@
         }
         .powerhouse__heading p {
             color: var(--gray);
-            font-size: var(--pink);
+            font-size: var(--p-heading);
             margin: 0;
             padding: 0;
             line-height: 1.4rem;
@@ -304,7 +305,7 @@
             margin: 0 10px;
         }
         .powerhouse__article p {
-            font-size: 1.2rem;
+            font-size: 1.3rem;
             font-weight: 500;
             color: var(--blue);
             margin: 0;
@@ -336,6 +337,165 @@
             padding: 0;
             line-height: 1.4rem;
         }
+        /*  << CAROUSEL SECTION >> */
+        
+        /* * {
+            scrollbar-color: transparent transparent;
+        }
+        *::-webkit-scrollbar {
+            width: 0;
+        }
+        *::-webkit-scrollbar-track {
+            background: transparent;
+        }
+        *::-webkit-scrollbar-thumb {
+            background: transparent;
+            border: none;
+        }
+        * {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+        .nano__carousel-wrapper {
+            max-width: 100%;
+            margin: 1rem 0;
+            color: white;
+        }
+        ol, li {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+        .carousel__viewport {
+            position: absolute;
+            display: flex;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            overflow-x: scroll;
+            scroll-behavior: smooth;
+            scroll-snap-type: x mandatory;
+        } */
+        /* .carousel {
+            position: relative;
+            padding-top: 30%;
+        }
+        .carousel__slide {
+            position: relative;
+            flex: 0 0 32%;
+            margin: 7px;
+            width: 100%;
+            background-color: var(--white);
+        }
+        .carousel__snapper {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            scroll-snap-align: center;
+        }
+        .carousel__slide-content {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            justify-content: space-between;
+            flex-direction: column;
+        }
+        .carousel__slide-content p {
+            font-size: .8rem;
+            color: var(--blue);
+            line-height: .9rem;
+            padding: .8rem;
+            flex-grow: 2;
+            margin: 0;
+        }
+        .carousel__slide-content h3 {
+            font-size: 1rem;
+            color: var(--white);
+            height: 25%;
+            padding-top: .5rem;
+            margin: 0;
+            width: 100%;
+            background-color: var(--blue);
+            line-height: 1.2rem;
+            z-index: 11;
+        }
+        .carousel__prev,
+        .carousel__next {
+            position: absolute;
+            top: 0;
+            margin-top: 30%;
+            width: 4rem;
+            height: 4rem;
+            border-radius: 50%;
+            font-size: 0;
+            z-index: 11;
+        }
+        .carousel::before,
+        .carousel::after {
+            position: absolute;
+            transform: translateY(200%);
+            top: 0;
+            border-radius: 50%;
+        } */
+        
+        /* .carousel__next {
+            position: absolute;
+            right: 0;
+        }
+        
+        .carousel::before {
+            left: .4rem;
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpolygon points='0,50 80,100 80,0' fill='%230d0et2f'/%3E%3C/svg%3E");
+        }
+        .carousel__prev {
+            left: -1rem;
+        }
+        
+        .carousel::after {
+            right: 0;
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpolygon points='100,50 20,100 20,0' fill='%230d0e2f'/%3E%3C/svg%3E");
+            }
+        .carousel__next {
+            right: -1rem;
+        }
+        
+        .carousel::before,
+        .carousel::after {
+            content: "";
+            z-index: 1;
+            background-color: rgba(15, 15, 48, 0.01 );
+        }
+        .carousel__navigation {
+            position: absolute;
+            right: 0;
+            left: 0;
+            text-align: center;
+        }
+        .carousel__navigation-list,
+        .carousel__navigation-item {
+            display: inline-block;
+        }
+        .carousel__navigation-button {
+            display: inline-block;
+            width: 1rem;
+            height: 1rem;
+            margin: .1rem;
+            background-color: rgb(57, 73, 117);
+            border-radius: 50%;
+            font-size: 0;
+            transition: transform 0.2s
+        }
+        .carousel__navigation-button:hover {
+            transform: scale(1.2);
+            background-color: rgb(70, 92, 153);
+        } */
+        /*  << END OF CAROUSEL SECTION >> */
 /* <<<< END OF MOMENTUM SECTION >>>> */
 
 /* <<<< MORE SECTION >>>> */
@@ -399,9 +559,14 @@
                 display: none;
             }
             .carousel__slide-content p {
-                font-size: .8rem;
-                line-height: 1.2rem;
-                padding: 1rem;
+                font-size: 1rem;
+                line-height: 1.1rem;
+                padding: 1.1rem;
+            }
+            .carousel__slide-content h3 {
+                font-size: 1.3rem;
+                padding-top: 1rem;
+                line-height: 1.3rem;
             }
             .powerhouse__header-wrapper {
                 flex-direction: column;
@@ -453,7 +618,7 @@
                         <li id="carousel__slide1" tabindex="0" class="carousel__slide">
                            <div class="carousel__snapper">
                                <a href="#carousel__slide9"class="carousel__prev">To to last slide</a>
-                               <a href="#" class=carousel__slide-content>
+                               <a href="#carousel__slide1" class=carousel__slide-content>
                                    <p>              
                                         Influence: Moving people to action with your
                                         words - Get ready to make a difference in
@@ -464,14 +629,14 @@
                                    </p>
                                    <h3>The Game-Changing Leader</h3>
                                </a>
-                               <!-- <a href="#carousel__slide2" class="carousel__next">Go to next slide</a> -->
+                               <a href="#carousel__slide2" class="carousel__next">Go to next slide</a>
                            </div>
                         </li>
                         <li id="carousel__slide2" tabindex="0" class="carousel__slide">
                            <div class="carousel__snapper">
                                <div class="carousel__snapper-onthree">
-                                   <!-- <a href="#carousel__slide1"class="carousel__prev">To to previou slide</a> -->
-                                   <a href="#" class=carousel__slide-content>
+                                   <a href="#carousel__slide1"class="carousel__prev">To to previou slide</a>
+                                   <a href="#carousel__slide2" class=carousel__slide-content>
                                        <p>              
                                             Mastering the one-page Marketing Plan -
                                             Winnie helps you identify “what makes you
@@ -483,22 +648,23 @@
                                         <h3><span id="content1">Strengthening your</span><span id="content2">Marketing Strategy</span></h3>
                                     </a>
                                 </div>
-                               <!-- <a href="#carousel__slide3" class="carousel__next">Go to next slide</a> -->
+                               <a href="#carousel__slide3" class="carousel__next">Go to next slide</a>
                            </div>
                         </li>
                         <li id="carousel__slide3" tabindex="0" class="carousel__slide">
                            <div class="carousel__snapper">
-                               <!-- <a href="#carousel__slide2"class="carousel__prev">To to previous slide</a> -->
-                               <a href="#" class=carousel__slide-content>
-                                   <p>              
-                                        Influence: Moving people to action with your
-                                        words - Get ready to make a difference in
-                                        your life. Really practice the skills of verbal
-                                        communication. Develop your influence and
-                                        show leadership. Join Conor and learn how
-                                        to be a great communicator.
-                                   </p>
-                                   <h3>The Game-Changing Leader</h3>
+                               <a href="#carousel__slide2"class="carousel__prev">To to previous slide</a>
+                               <a href="#carousel__slide3" class=carousel__slide-content>
+                                    <p>
+                                        Podcasting helps build your brand beyond
+                                        being just a business. When you speak on a
+                                        podcast, listeners hear you, not as a compa-
+                                        ny, but as a person. That kind of authenticity
+                                        is highly compelling for customers. Learn
+                                        from Chris how to Incorporate Podcasting
+                                        as a marketing strategy to grow your business.
+                                    </p>
+                                    <h3>Marketing via Podcasting</h3>
                                </a>
                                <a href="#carousel__slide6" class="carousel__next">Go to next slide</a>
                            </div>
@@ -506,25 +672,25 @@
                         <li id="carousel__slide4" tabindex="0" class="carousel__slide">
                            <div class="carousel__snapper">
                                <a href="#carousel__slide1"class="carousel__prev">To to previous slide</a>
-                               <a href="#" class=carousel__slide-content>
-                                   <p>              
-                                        Influence: Moving people to action with your
-                                        words - Get ready to make a difference in
-                                        your life. Really practice the skills of verbal
-                                        communication. Develop your influence and
-                                        show leadership. Join Conor and learn how
-                                        to be a great communicator.
-                                   </p>
-                                   <h3>four</h3>
+                               <a href="#carousel__slide4" class=carousel__slide-content>
+                                    <p>
+                                        The Neuroscience of Mindfulness & Resilience
+                                        - Brian teaches the importance of
+                                        mindfulness & being present, how it reflects
+                                        on the body, the brain and daily perfor-
+                                        mance. Identify your emotions, and why
+                                        being kind and compassiatatters.
+                                    </p>
+                                    <h3>A Fresh Start</h3>
                                </a>
-                               <!-- <a href="#carousel__slide5" class="carousel__next">Go to next slide</a> -->
+                               <a href="#carousel__slide5" class="carousel__next">Go to next slide</a>
                            </div>
                         </li>
                         <li id="carousel__slide5" tabindex="0" class="carousel__slide">
                            <div class="carousel__snapper">
                                <div class="carousel__snapper-onthree">
-                                   <!-- <a href="#carousel__slide4"class="carousel__prev">To to previous slide</a> -->
-                                   <a href="#" class=carousel__slide-content>
+                                   <a href="#carousel__slide4"class="carousel__prev">To to previous slide</a>
+                                   <a href="#carousel__slide5" class=carousel__slide-content>
                                    <p>              
                                        Influence: Moving people to action with your
                                         words - Get ready to make a difference in
@@ -535,23 +701,23 @@
                                     </p>
                                     <h3>The Game-Changing Leader</h3>
                                 </a>
-                                <!-- <a href="#carousel__slide6" class="carousel__next">Go to next slide</a> -->
+                                <a href="#carousel__slide6" class="carousel__next">Go to next slide</a>
                             </div>
                            </div>
                         </li>
                         <li id="carousel__slide6" tabindex="0" class="carousel__slide">
                            <div class="carousel__snapper">
-                               <!-- <a href="#carousel__slide5"class="carousel__prev">To to previous slide</a> -->
-                               <a href="#" class=carousel__slide-content>
-                                   <p>              
-                                        Influence: Moving people to action with your
-                                        words - Get ready to make a difference in
-                                        your life. Really practice the skills of verbal
-                                        communication. Develop your influence and
-                                        show leadership. Join Conor and learn how
-                                        to be a great communicator.
-                                   </p>
-                                   <h3>The Game-Changing Leader</h3>
+                               <a href="#carousel__slide5"class="carousel__prev">To to previous slide</a>
+                               <a href="#carousel__slide6" class=carousel__slide-content>
+                                    <p>              
+                                        Mastering the one-page Marketing Plan -
+                                        Winnie helps you identify “what makes you
+                                        unique” and how to use that to stand out and
+                                        make an impact. Join her and learn how to
+                                        create a marketing plan that aligns with your
+                                        organization’s goals.
+                                    </p>
+                                    <h3><span id="content1">Strengthening your</span><span id="content2">Marketing Strategy</span></h3>
                                </a>
                                <a href="#carousel__slide9" class="carousel__next">Go to next slide</a>
                            </div>
@@ -559,7 +725,7 @@
                         <li id="carousel__slide7" tabindex="0" class="carousel__slide">
                            <div class="carousel__snapper">
                                <a href="#carousel__slide4"class="carousel__prev">To to previous slide</a>
-                               <a href="#" class=carousel__slide-content>
+                               <a href="#carousel__slide7" class=carousel__slide-content>
                                    <p>              
                                         Influence: Moving people to action with your
                                         words - Get ready to make a difference in
@@ -570,14 +736,14 @@
                                    </p>
                                    <h3>The Game-Changing Leader</h3>
                                </a>
-                               <!-- <a href="#carousel__slide8" class="carousel__next">Go to next slide</a> -->
+                               <a href="#carousel__slide8" class="carousel__next">Go to next slide</a>
                            </div>
                         </li>
                         <li id="carousel__slide8" tabindex="0" class="carousel__slide">
                            <div class="carousel__snapper">
                                <div class="carousel__snapper-onthree">
-                                   <!-- <a href="#carousel__slide7"class="carousel__prev">To to previous slide</a> -->
-                                   <a href="#" class=carousel__slide-content>
+                                   <a href="#carousel__slide7"class="carousel__prev">To to previous slide</a>
+                                   <a href="#carousel__slide8" class=carousel__slide-content>
                                    <p>              
                                        Influence: Moving people to action with your
                                        words - Get ready to make a difference in
@@ -588,14 +754,14 @@
                                    </p>
                                    <h3>The Game-Changing Leader</h3>
                                 </a>
-                                <!-- <a href="#carousel__slide9" class="carousel__next">Go to next slide</a> -->
+                                <a href="#carousel__slide9" class="carousel__next">Go to next slide</a>
                             </div>
                            </div>
                         </li>
                         <li id="carousel__slide9" tabindex="0" class="carousel__slide">
                            <div class="carousel__snapper">
-                               <!-- <a href="#carousel__slide8"class="carousel__prev">To to previous slide</a> -->
-                               <a href="#" class=carousel__slide-content>
+                               <a href="#carousel__slide8"class="carousel__prev">To to previous slide</a>
+                               <a href="#carousel__slide9" class=carousel__slide-content>
                                    <p>              
                                         Influence: Moving people to action with your
                                         words - Get ready to make a difference in
@@ -683,6 +849,9 @@
                 <div class="momentum__heading">
                     <h2>GLCx Momentum</h2>
                     <p>GLCx Momentum 2021 is the catalyst you need to build momentum and grow beyond your personal limits</p>
+                </div>
+                <div class="momentum__carousel-wrapper">
+
                 </div>
             </div>
         </section>
