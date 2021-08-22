@@ -1,0 +1,702 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        img {
+            width: 100%;
+        }
+        a {
+            text-decoration: none;
+        }
+        .global-wrapper {
+            margin: 0 auto;
+            max-width: 900px;
+            font-family: 'Roboto', 'Open Sans', Verdana, Geneva, sans-serif;
+            line-height: 1.6rem;
+            --blue: #0d0e2f;
+            --pink: #ec3870;
+            --gray: #7c7e80;
+            --white: #fff;
+
+            --h2: 1.9rem;
+            --h3: 1.7rem;
+            --p-heading: 1.2rem;
+            --a: .9rem;
+        }
+/* <<<< NANO SECTION >>>> */
+        .nano {
+            background-color: var(--blue);
+            padding: 20px;
+            margin: 0;
+        }
+        .nano__header-wrapper {
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            line-height: 1.4rem;
+        }
+        .nano__header-wrapper h2 {
+            color: var(--white);
+            font-size: var(--h2);
+            font-weight: 700;
+            margin: 0;
+            padding: 0;
+        }
+        .nano__header-wrapper h3 {
+            color: var(--pink);
+            font-size: var(--h3);
+            font-weight: 700;
+            margin: 0;
+            padding: 0;
+        }
+        .nano__header-wrapper p {
+            color: var(--white);
+            font-size: var(--p-heading);
+            font-weight: 600;
+            line-height: 1.4rem;
+            margin: 0;
+            padding-top: 8px;
+        }
+        #content1::after {
+            content: "\a";
+            white-space: pre;
+        }
+        /*  << CAROUSEL SECTION >> */
+
+        * {
+            scrollbar-color: transparent transparent;
+        }
+        *::-webkit-scrollbar {
+            width: 0;
+        }
+        *::-webkit-scrollbar-track {
+            background: transparent;
+        }
+        *::-webkit-scrollbar-thumb {
+            background: transparent;
+            border: none;
+        }
+        * {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+        .nano__carousel-wrapper {
+            max-width: 100%;
+            margin: 1rem 0;
+            color: white;
+        }
+        ol, li {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+        .carousel__viewport {
+            position: absolute;
+            display: flex;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            overflow-x: scroll;
+            scroll-behavior: smooth;
+            scroll-snap-type: x mandatory;
+        }
+        .carousel {
+            position: relative;
+            padding-top: 33%;
+        }
+        .carousel__slide {
+            position: relative;
+            flex: 0 0 32%;
+            margin: 7px;
+            width: 100%;
+            background-color: var(--white);
+        }
+        .carousel__snapper {
+            position: absolute;
+            /* border: 1px solid red; */
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            scroll-snap-align: center;
+        }
+        .carousel__slide-content {
+            /* display: flex; */
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            /* border: 2px solid pink; */
+            display: flex;
+            justify-content: space-between;
+            flex-direction: column;
+            /* padding: .5rem; */
+        }
+        .carousel__slide-content p {
+            font-size: .8rem;
+            color: var(--blue);
+            line-height: 1rem;
+            padding: .8rem;
+            flex-grow: 2;
+            margin: 0;
+        }
+        .carousel__slide-content h3 {
+            font-size: .9rem;
+            color: var(--white);
+            height: 15%;
+            padding-top: .5rem;
+            margin: 0;
+            width: 100%;
+            background-color: var(--blue);
+            flex-grow: 1;
+            z-index: 11;
+        }
+        .carousel__prev,
+        .carousel__next {
+            /* border: 1px solid red; */
+            position: absolute;
+            top: 0;
+            margin-top: 30%;
+            width: 4rem;
+            height: 4rem;
+            /* transform: translateY(-50%); */
+            border-radius: 50%;
+            font-size: 0;
+            z-index: 11;
+        }
+        .carousel::before,
+        .carousel::after {
+            position: absolute;
+            /* border: 1px solid green; */
+            transform: translateY(200%);
+            top: 0;
+            width: 3rem;
+            height: 3rem;
+            border-radius: 50%;
+        }
+        
+        .carousel__next {
+            position: absolute;
+            right: 0;
+        }
+        
+        .carousel::before {
+            left: .4rem;
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpolygon points='0,50 80,100 80,0' fill='%230d0et2f'/%3E%3C/svg%3E");
+        }
+        .carousel__prev {
+            left: -1rem;
+        }
+
+        .carousel::after {
+            right: 0;
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpolygon points='100,50 20,100 20,0' fill='%230d0e2f'/%3E%3C/svg%3E");
+            }
+        .carousel__next {
+            right: -1rem;
+        }
+        
+        .carousel::before,
+        .carousel::after {
+            content: "";
+            z-index: 1;
+            background-color: rgba(15, 15, 48, 0.1 );
+            background-size: 1.5rem 1.5rem;
+            background-repeat: no-repeat;
+            background-position: center center;
+            color: #fff;
+            font-size: 2.5rem;
+            line-height: 4rem;
+            text-align: center;
+        }
+        .carousel__navigation {
+            position: absolute;
+            right: 0;
+            left: 0;
+            text-align: center;
+        }
+        .carousel__navigation-list,
+        .carousel__navigation-item {
+            display: inline-block;
+        }
+        .carousel__navigation-button {
+            display: inline-block;
+            width: 1rem;
+            height: 1rem;
+            margin: .1rem;
+            background-color: rgb(57, 73, 117);
+            border-radius: 50%;
+            font-size: 0;
+            transition: transform 0.2s
+        }
+        .carousel__navigation-button:hover {
+            transform: scale(1.2);
+            background-color: rgb(70, 92, 153);
+        }
+        /*  << END OF CAROUSEL SECTION >> */
+
+/* <<<< END OF NANO SECTION >>>> */
+
+/* <<<< POWERHOUSE SECTION >>>> */
+        .powerhouse {
+            padding: 20px;
+            border-bottom: 1px solid var(--blue);
+            margin:  1rem 0 0;
+        }
+        .powerhouse__header-wrapper {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .powerhouse__heading {
+            justify-content: flex-start;
+            max-width: 55%;
+        }
+        .powerhouse__heading h2 {
+            color: var(--blue);
+            font-size: var(--h2);
+            margin: 0;
+            padding: 0 0 10px;
+        }
+        .powerhouse__heading p {
+            color: var(--gray);
+            font-size: var(--pink);
+            margin: 0;
+            padding: 0;
+            line-height: 1.4rem;
+        }
+        .powerhouse__heading-cta {
+            max-width: 22%;
+        }
+        .powerhouse__heading-cta a {
+            display: inline-block;
+            font-size: var(--a);
+            color: var(--blue);
+            text-decoration: none;
+            line-height: 1.4;
+            border: 2px solid var(--blue);
+            padding: .7rem 1.9rem;
+            font-weight: 600;
+            transition: 0.2s;
+        }
+        .powerhouse__heading-cta a:hover {
+            transform: translateY(-2px);
+        }
+        .powerhouse__articles {
+            display: flex;
+            flex-direction: row;
+            margin-top: 1rem;
+        }
+        .powerhouse__article {
+            transition: 0.2s;
+        }
+        .powerhouse__article:hover {
+            transform: translateY(-2px);
+        }
+        .powerhouse__article:nth-child(2) {
+            margin: 0 10px;
+        }
+        .powerhouse__article p {
+            font-size: 1.2rem;
+            font-weight: 500;
+            color: var(--blue);
+            margin: 0;
+        }
+/* <<<< END OF POWERHOUSE SECTION >>>> */
+/* <<<< MOMENTUM SECTION >>>> */
+        .momentum {
+            padding: 20px;
+            border-bottom: 1px solid var(--blue);
+            margin: 0;
+        }
+        .momentum__header-wrapper {
+            display: flex;
+            flex-direction: row;
+        }
+        .momentum__heading {
+            justify-content: flex-start;
+            max-width: 57%;
+        }
+        .momentum__heading h2 {
+            color: var(--blue);
+            font-size: var(--h2);
+            margin: 10px 0;
+        }
+        .momentum__heading p {
+            color: var(--gray);
+            font-size: var(--p-heading);
+            margin: 0;
+            padding: 0;
+            line-height: 1.4rem;
+        }
+/* <<<< END OF MOMENTUM SECTION >>>> */
+
+/* <<<< MORE SECTION >>>> */
+        .more {
+            padding: 20px;
+            margin: 0;
+        }
+        .more__header-wrapper {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .more__heading {
+            justify-content: center;
+        }
+        .more__heading h2 {
+            color: var(--blue);
+            font-size: var(--h2);
+            text-align: center;
+            margin: 10px 0;
+            padding: 0;
+        }
+        .more__heading p {
+            color: var(--gray);
+            font-size: var(--p-heading);
+            margin: 20px 0;
+            padding: 0;
+        }
+        .more__heading-cta a {
+            display: inline-block;
+            font-size: var(--a);
+            color: var(--blue);
+            border: 2px solid var(--blue);
+            padding: .7rem 1.9rem;
+            font-weight: 600;
+            transition: 0.2s
+        }
+        .more__heading-cta a:hover {
+            transform: translateY(-2px);
+        }
+/* <<<< END OF MORE SECTION >>>> */
+/* <<<< MEDIA QUERIES >>>> */
+
+        @media screen and (max-width: 750px) {
+            .global-wrapper {
+                --h2: 1.6rem;
+                --h3: 1.4rem;
+                --p-heading: 1.1rem;
+                --a: .9rem;
+            }
+            .carousel {
+                padding-top: 80%;
+            }
+            .carousel__slide {
+                flex: 0 0 100%;
+            }
+            .carousel::before,
+            .carousel__prev,
+            .carousel::after,
+            .carousel__next {
+                display: none;
+            }
+            .carousel__slide-content p {
+                font-size: .8rem;
+                line-height: 1.2rem;
+                padding: 1rem;
+            }
+            .powerhouse__header-wrapper {
+                flex-direction: column;
+            }
+            .powerhouse__heading {
+                justify-content: center;
+                max-width: 100%;
+            }
+            .powerhouse__heading-cta {
+                max-width: 100%;
+                margin: 2rem 1rem;
+            }
+            .powerhouse__articles {
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+            }
+            .powerhouse__article:nth-child(2) {
+                margin: 0 0 2rem;
+            }
+            .powerhouse__article {
+                margin-bottom: 2rem
+            }
+            .momentum__header-wrapper {
+                flex-direction: column;
+            }
+            .momentum__heading {
+                justify-content: center;
+                max-width: 100%;
+            }
+            .more__heading-cta a {
+                padding: .3rem 1.2rem;
+            }
+        }
+
+    </style>
+</head>
+<body>
+    <div class="global-wrapper">
+        <section class="nano">
+            <div class="nano__header-wrapper">
+                <h3>Nano</h3>
+                <h2>Learning</h2>
+                <p>Concise and actionable content for solving your Learning needs.</p>
+            </div>
+            <div class="nano__carousel-wrapper">
+                <section class="carousel" aria-lable="Gallery">
+                    <ol class="carousel__viewport">
+                        <li id="carousel__slide1" tabindex="0" class="carousel__slide">
+                           <div class="carousel__snapper">
+                               <a href="#carousel__slide9"class="carousel__prev">To to last slide</a>
+                               <a href="#" class=carousel__slide-content>
+                                   <p>              
+                                        Influence: Moving people to action with your
+                                        words - Get ready to make a difference in
+                                        your life. Really practice the skills of verbal
+                                        communication. Develop your influence and
+                                        show leadership. Join Conor and learn how
+                                        to be a great communicator.
+                                   </p>
+                                   <h3>The Game-Changing Leader</h3>
+                               </a>
+                               <!-- <a href="#carousel__slide2" class="carousel__next">Go to next slide</a> -->
+                           </div>
+                        </li>
+                        <li id="carousel__slide2" tabindex="0" class="carousel__slide">
+                           <div class="carousel__snapper">
+                               <div class="carousel__snapper-onthree">
+                                   <!-- <a href="#carousel__slide1"class="carousel__prev">To to previou slide</a> -->
+                                   <a href="#" class=carousel__slide-content>
+                                       <p>              
+                                            Mastering the one-page Marketing Plan -
+                                            Winnie helps you identify “what makes you
+                                            unique” and how to use that to stand out and
+                                            make an impact. Join her and learn how to
+                                            create a marketing plan that aligns with your
+                                            organization’s goals.
+                                        </p>
+                                        <h3><span id="content1">Strengthening your</span><span id="content2">Marketing Strategy</span></h3>
+                                    </a>
+                                </div>
+                               <!-- <a href="#carousel__slide3" class="carousel__next">Go to next slide</a> -->
+                           </div>
+                        </li>
+                        <li id="carousel__slide3" tabindex="0" class="carousel__slide">
+                           <div class="carousel__snapper">
+                               <!-- <a href="#carousel__slide2"class="carousel__prev">To to previous slide</a> -->
+                               <a href="#" class=carousel__slide-content>
+                                   <p>              
+                                        Influence: Moving people to action with your
+                                        words - Get ready to make a difference in
+                                        your life. Really practice the skills of verbal
+                                        communication. Develop your influence and
+                                        show leadership. Join Conor and learn how
+                                        to be a great communicator.
+                                   </p>
+                                   <h3>The Game-Changing Leader</h3>
+                               </a>
+                               <a href="#carousel__slide6" class="carousel__next">Go to next slide</a>
+                           </div>
+                        </li>
+                        <li id="carousel__slide4" tabindex="0" class="carousel__slide">
+                           <div class="carousel__snapper">
+                               <a href="#carousel__slide1"class="carousel__prev">To to previous slide</a>
+                               <a href="#" class=carousel__slide-content>
+                                   <p>              
+                                        Influence: Moving people to action with your
+                                        words - Get ready to make a difference in
+                                        your life. Really practice the skills of verbal
+                                        communication. Develop your influence and
+                                        show leadership. Join Conor and learn how
+                                        to be a great communicator.
+                                   </p>
+                                   <h3>four</h3>
+                               </a>
+                               <!-- <a href="#carousel__slide5" class="carousel__next">Go to next slide</a> -->
+                           </div>
+                        </li>
+                        <li id="carousel__slide5" tabindex="0" class="carousel__slide">
+                           <div class="carousel__snapper">
+                               <div class="carousel__snapper-onthree">
+                                   <!-- <a href="#carousel__slide4"class="carousel__prev">To to previous slide</a> -->
+                                   <a href="#" class=carousel__slide-content>
+                                   <p>              
+                                       Influence: Moving people to action with your
+                                        words - Get ready to make a difference in
+                                        your life. Really practice the skills of verbal
+                                        communication. Develop your influence and
+                                        show leadership. Join Conor and learn how
+                                        to be a great communicator.
+                                    </p>
+                                    <h3>The Game-Changing Leader</h3>
+                                </a>
+                                <!-- <a href="#carousel__slide6" class="carousel__next">Go to next slide</a> -->
+                            </div>
+                           </div>
+                        </li>
+                        <li id="carousel__slide6" tabindex="0" class="carousel__slide">
+                           <div class="carousel__snapper">
+                               <!-- <a href="#carousel__slide5"class="carousel__prev">To to previous slide</a> -->
+                               <a href="#" class=carousel__slide-content>
+                                   <p>              
+                                        Influence: Moving people to action with your
+                                        words - Get ready to make a difference in
+                                        your life. Really practice the skills of verbal
+                                        communication. Develop your influence and
+                                        show leadership. Join Conor and learn how
+                                        to be a great communicator.
+                                   </p>
+                                   <h3>The Game-Changing Leader</h3>
+                               </a>
+                               <a href="#carousel__slide9" class="carousel__next">Go to next slide</a>
+                           </div>
+                        </li>
+                        <li id="carousel__slide7" tabindex="0" class="carousel__slide">
+                           <div class="carousel__snapper">
+                               <a href="#carousel__slide4"class="carousel__prev">To to previous slide</a>
+                               <a href="#" class=carousel__slide-content>
+                                   <p>              
+                                        Influence: Moving people to action with your
+                                        words - Get ready to make a difference in
+                                        your life. Really practice the skills of verbal
+                                        communication. Develop your influence and
+                                        show leadership. Join Conor and learn how
+                                        to be a great communicator.
+                                   </p>
+                                   <h3>The Game-Changing Leader</h3>
+                               </a>
+                               <!-- <a href="#carousel__slide8" class="carousel__next">Go to next slide</a> -->
+                           </div>
+                        </li>
+                        <li id="carousel__slide8" tabindex="0" class="carousel__slide">
+                           <div class="carousel__snapper">
+                               <div class="carousel__snapper-onthree">
+                                   <!-- <a href="#carousel__slide7"class="carousel__prev">To to previous slide</a> -->
+                                   <a href="#" class=carousel__slide-content>
+                                   <p>              
+                                       Influence: Moving people to action with your
+                                       words - Get ready to make a difference in
+                                       your life. Really practice the skills of verbal
+                                       communication. Develop your influence and
+                                        show leadership. Join Conor and learn how
+                                        to be a great communicator.
+                                   </p>
+                                   <h3>The Game-Changing Leader</h3>
+                                </a>
+                                <!-- <a href="#carousel__slide9" class="carousel__next">Go to next slide</a> -->
+                            </div>
+                           </div>
+                        </li>
+                        <li id="carousel__slide9" tabindex="0" class="carousel__slide">
+                           <div class="carousel__snapper">
+                               <!-- <a href="#carousel__slide8"class="carousel__prev">To to previous slide</a> -->
+                               <a href="#" class=carousel__slide-content>
+                                   <p>              
+                                        Influence: Moving people to action with your
+                                        words - Get ready to make a difference in
+                                        your life. Really practice the skills of verbal
+                                        communication. Develop your influence and
+                                        show leadership. Join Conor and learn how
+                                        to be a great communicator.
+                                   </p>
+                                   <h3>The Game-Changing Leader</h3>
+                               </a>
+                               <a href="#carousel__slide1" class="carousel__next">Go to first</a>
+                           </div>
+                        </li>
+                    </ol>
+                    <aside class="carousel__navigation">
+                        <ol class="carousel__navigation-list">
+                            <li class="carousel__navigation-item">
+                                <a href="#carousel__slide1" id="carousel__slide1"
+                                class="carousel__navigation-button">Go to slide 1</a>
+                            </li>
+                            <li class="carousel__navigation-item">
+                                <a href="#carousel__slide2" id="carousel__slide2"
+                                class="carousel__navigation-button">Go to slide 2</a>
+                            </li>
+                            <li class="carousel__navigation-item">
+                                <a href="#carousel__slide3" id="carousel__slide3"
+                                class="carousel__navigation-button">Go to slide 3</a>
+                            </li>
+                            <li class="carousel__navigation-item">
+                                <a href="#carousel__slide4" id="carousel__slide4"
+                                class="carousel__navigation-button">Go to slide 4</a>
+                            </li>
+                            <li class="carousel__navigation-item">
+                                <a href="#carousel__slide5" id="carousel__slide5"
+                                class="carousel__navigation-button">Go to slide 5</a>
+                            </li>
+                            <li class="carousel__navigation-item">
+                                <a href="#carousel__slide6" id="carousel__slide6"
+                                class="carousel__navigation-button">Go to slide 6</a>
+                            </li>
+                            <li class="carousel__navigation-item">
+                                <a href="#carousel__slide7" id="carouse__slide7"
+                                class="carousel__navigation-button">Go to slide 7</a>
+                            </li>
+                            <li class="carousel__navigation-item">
+                                <a href="#carousel__slide8" id="carousel__slide8"
+                                class="carousel__navigation-button">Go to slide 8</a>
+                            </li>
+                            <li class="carousel__navigation-item">
+                                <a href="#carousel__slide9" id="carousel__slide9"
+                                class="carousel__navigation-button">Go to slide 9</a>
+                            </li>
+                        </ol>
+                    </aside>
+                </section>
+            </div>
+        </section>
+        <section class="powerhouse">
+            <div class="powerhouse__header-wrapper">
+                <div class="powerhouse__heading">
+                    <h2>Powerhouse</h2>
+                    <p>The EO Powerhouse Series is designed to gove exclusive access to thought leaders and change-makers across various industries.</p>
+                </div>
+                <div class="powerhouse__heading-cta">
+                    <a href="#">Want to register for a LIVE event?</a>
+                </div>
+            </div>  
+            <div class="powerhouse__articles">
+                <a href="#" class=powerhouse__article>
+                    <img src="https://github.com/Themesses/blue-images/blob/main/magicjohnson.png?raw=true" alt="this" style="max-width: 500px";/>
+                    <p>Magic Johnson</p>
+                </a>
+                <a href="#" class=powerhouse__article>
+                    <img src="https://github.com/Themesses/blue-images/blob/main/malalayousafzai.png?raw=true" alt="this" style="max-width: 500px";/>
+                    <p>Malala Yousafzai</p>
+                </a>
+                <a href="#" class=powerhouse__article>
+                    <img src="https://github.com/Themesses/blue-images/blob/main/estherperel.png?raw=true" alt="this" style="max-width: 500px";/>
+                    <p>Esther Perel</p>
+                </a>           
+            </div>
+        </section>
+        <section class="momentum">
+            <div class="momentum__header_wrapper">
+                <div class="momentum__heading">
+                    <h2>GLCx Momentum</h2>
+                    <p>GLCx Momentum 2021 is the catalyst you need to build momentum and grow beyond your personal limits</p>
+                </div>
+            </div>
+        </section>
+        <section class="more">
+            <div class="more__header-wrapper">
+                <div class="more__heading">
+                    <h2>Looking for more?</h2>
+                    <p>Expand your mind. Watch thousands of lessons from the worlds best.</p>
+                </div>
+                <div class="more__heading-cta">
+                    <a href="#">GO TO LIBRARY</a>
+                </div>
+            </div>
+        </section>
+    </div>
+</body>
+</html>
