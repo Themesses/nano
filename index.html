@@ -118,7 +118,6 @@
         }
         .carousel__snapper {
             position: absolute;
-            /* border: 1px solid red; */
             top: 0;
             left: 0;
             width: 100%;
@@ -126,17 +125,14 @@
             scroll-snap-align: center;
         }
         .carousel__slide-content {
-            /* display: flex; */
             position: absolute;
             top: 0;
             left: 0;
             width: 100%;
             height: 100%;
-            /* border: 2px solid pink; */
             display: flex;
             justify-content: space-between;
             flex-direction: column;
-            /* padding: .5rem; */
         }
         .carousel__slide-content p {
             font-size: .75rem;
@@ -160,13 +156,11 @@
         }
         .carousel__prev,
         .carousel__next {
-            /* border: 1px solid red; */
             position: absolute;
             top: 0;
             margin-top: 30%;
             width: 4rem;
             height: 4rem;
-            /* transform: translateY(-50%); */
             border-radius: 50%;
             font-size: 0;
             z-index: 11;
@@ -174,7 +168,6 @@
         .carousel::before,
         .carousel::after {
             position: absolute;
-            /* border: 1px solid green; */
             transform: translateY(200%);
             top: 0;
             width: 3rem;
@@ -211,10 +204,6 @@
             background-size: .6rem .6rem;
             background-repeat: no-repeat;
             background-position: center center;
-            /* color: #fff; */
-            /* font-size: 2.5rem; */
-            /* line-height: 4rem; */
-            /* text-align: center; */
         }
         .carousel__navigation {
             position: absolute;
@@ -319,7 +308,7 @@
         }
         .momentum__header-wrapper {
             display: flex;
-            flex-direction: row;
+            flex-direction: column;
         }
         .momentum__heading {
             justify-content: flex-start;
@@ -339,24 +328,8 @@
         }
         /*  << CAROUSEL SECTION >> */
         
-        /* * {
-            scrollbar-color: transparent transparent;
-        }
-        *::-webkit-scrollbar {
-            width: 0;
-        }
-        *::-webkit-scrollbar-track {
-            background: transparent;
-        }
-        *::-webkit-scrollbar-thumb {
-            background: transparent;
-            border: none;
-        }
-        * {
-            -ms-overflow-style: none;
-            scrollbar-width: none;
-        }
-        .nano__carousel-wrapper {
+        
+        .momentum__carousel-wrapper {
             max-width: 100%;
             margin: 1rem 0;
             color: white;
@@ -366,7 +339,7 @@
             margin: 0;
             padding: 0;
         }
-        .carousel__viewport {
+        .momentum__carousel__viewport {
             position: absolute;
             display: flex;
             top: 0;
@@ -376,19 +349,19 @@
             overflow-x: scroll;
             scroll-behavior: smooth;
             scroll-snap-type: x mandatory;
-        } */
-        /* .carousel {
+        } 
+        .momentum__carousel {
             position: relative;
             padding-top: 30%;
         }
-        .carousel__slide {
+        .momentum__carousel__slide {
             position: relative;
             flex: 0 0 32%;
             margin: 7px;
             width: 100%;
             background-color: var(--white);
         }
-        .carousel__snapper {
+        .momentum__carousel__snapper {
             position: absolute;
             top: 0;
             left: 0;
@@ -396,92 +369,85 @@
             height: 100%;
             scroll-snap-align: center;
         }
-        .carousel__slide-content {
+        .momentum__carousel__slide-content {
             position: absolute;
             top: 0;
             left: 0;
             width: 100%;
             height: 100%;
             display: flex;
-            justify-content: space-between;
             flex-direction: column;
         }
-        .carousel__slide-content p {
-            font-size: .8rem;
-            color: var(--blue);
+        .momentum__carousel__slide-content p {
+            font-size: .7rem;
+            max-width: 70%;
+            color: var(--gray);
             line-height: .9rem;
-            padding: .8rem;
-            flex-grow: 2;
             margin: 0;
+            padding: 0;
         }
-        .carousel__slide-content h3 {
-            font-size: 1rem;
-            color: var(--white);
-            height: 25%;
+        .momentum__carousel__slide-content h3 {
+            font-size: 1.1rem;
+            color: var(--blue);
             padding-top: .5rem;
             margin: 0;
-            width: 100%;
-            background-color: var(--blue);
             line-height: 1.2rem;
-            z-index: 11;
         }
-        .carousel__prev,
-        .carousel__next {
+        .momentum__carousel::before,
+        .momentum__carousel::after {
+            content: "";
             position: absolute;
+            transform: translateY(142%);
             top: 0;
+            width: 4rem;
+            height: 4rem;
+            background-size: 2rem;
+            background-repeat: no-repeat;
+            background-position: center center;
+            font-size: 2.5rem;
+            color: #fff;
+            border-radius: 50%;
+            z-index: 2;
+            /* z-index: 1; */
+        } 
+        .momentum__carousel__prev,
+        .momentum__carousel__next {
+            position: absolute;
             margin-top: 30%;
             width: 4rem;
             height: 4rem;
             border-radius: 50%;
             font-size: 0;
-            z-index: 11;
+            z-index: 10;
         }
-        .carousel::before,
-        .carousel::after {
-            position: absolute;
-            transform: translateY(200%);
-            top: 0;
-            border-radius: 50%;
-        } */
-        
-        /* .carousel__next {
-            position: absolute;
-            right: 0;
+        .momentum__carousel__prev {
+            left: 0px;
+            z-index: 5;
         }
-        
-        .carousel::before {
+        .momentum__carousel__next {
+            right: 0px;
+        }
+        .momentum__carousel::before {
             left: .4rem;
-            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpolygon points='0,50 80,100 80,0' fill='%230d0et2f'/%3E%3C/svg%3E");
-        }
-        .carousel__prev {
-            left: -1rem;
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpolygon points='0,50 80,100 80,0' fill='%23fff'/%3E%3C/svg%3E");
         }
         
-        .carousel::after {
+        .momentum__carousel::after {
             right: 0;
-            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpolygon points='100,50 20,100 20,0' fill='%230d0e2f'/%3E%3C/svg%3E");
-            }
-        .carousel__next {
-            right: -1rem;
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpolygon points='100,50 20,100 20,0' fill='%23fff'/%3E%3C/svg%3E");
         }
         
-        .carousel::before,
-        .carousel::after {
-            content: "";
-            z-index: 1;
-            background-color: rgba(15, 15, 48, 0.01 );
-        }
-        .carousel__navigation {
+        .momentum__carousel__navigation {
             position: absolute;
             right: 0;
             left: 0;
             text-align: center;
         }
-        .carousel__navigation-list,
-        .carousel__navigation-item {
+        .momentum__carousel__navigation-list,
+        .momentum__carousel__navigation-item {
             display: inline-block;
         }
-        .carousel__navigation-button {
+        .momentum__carousel__navigation-button {
             display: inline-block;
             width: 1rem;
             height: 1rem;
@@ -491,7 +457,7 @@
             font-size: 0;
             transition: transform 0.2s
         }
-        .carousel__navigation-button:hover {
+        .momentum__carousel__navigation-button:hover {
             transform: scale(1.2);
             background-color: rgb(70, 92, 153);
         } */
@@ -500,16 +466,17 @@
 
 /* <<<< MORE SECTION >>>> */
         .more {
-            padding: 20px;
             margin: 0;
         }
         .more__header-wrapper {
+            padding: 20px;
             display: flex;
             flex-direction: column;
             align-items: center;
         }
         .more__heading {
             justify-content: center;
+            margin-top: 2rem;
         }
         .more__heading h2 {
             color: var(--blue);
@@ -523,6 +490,9 @@
             font-size: var(--p-heading);
             margin: 20px 0;
             padding: 0;
+        }
+        .more__heading-cta {
+            padding-bottom: 3rem;
         }
         .more__heading-cta a {
             display: inline-block;
@@ -600,6 +570,25 @@
             .more__heading-cta a {
                 padding: .3rem 1.2rem;
             }
+            .momentum__carousel::before,
+            .momentum__prev,
+            .momentum__carousel::after,
+            .momentum__carousel__next {
+                display: none;
+            }
+            .momentum__carousel {
+                padding-top: 80%;
+            }
+            .momentum__carousel__slide {
+                flex: 0 0 100%;
+            }
+            .momentum__carousel__slide-content {
+                align-items: center;
+            }
+            .momentum__carousel__navigation-button {
+                width: .5rem;
+                height: .5rem;
+            }
         }
 
     </style>
@@ -617,7 +606,7 @@
                     <ol class="carousel__viewport">
                         <li id="carousel__slide1" tabindex="0" class="carousel__slide">
                            <div class="carousel__snapper">
-                               <a href="#carousel__slide9"class="carousel__prev">To to last slide</a>
+                               <a href="#carousel__slide1"class="carousel__prev">To to last slide</a>
                                <a href="#carousel__slide1" class=carousel__slide-content>
                                    <p>              
                                         Influence: Moving people to action with your
@@ -831,15 +820,15 @@
             </div>  
             <div class="powerhouse__articles">
                 <a href="#" class=powerhouse__article>
-                    <img src="https://github.com/Themesses/blue-images/blob/main/magicjohnson.png?raw=true" alt="this" style="max-width: 500px";/>
+                    <img src="https://github.com/Themesses/blue-images/blob/main/magicjohnson.png?raw=true" alt="Magic Johnson" style="max-width: 500px"/>
                     <p>Magic Johnson</p>
                 </a>
                 <a href="#" class=powerhouse__article>
-                    <img src="https://github.com/Themesses/blue-images/blob/main/malalayousafzai.png?raw=true" alt="this" style="max-width: 500px";/>
+                    <img src="https://github.com/Themesses/blue-images/blob/main/malalayousafzai.png?raw=true" alt="Malala Yousafzai" style="max-width: 500px"/>
                     <p>Malala Yousafzai</p>
                 </a>
                 <a href="#" class=powerhouse__article>
-                    <img src="https://github.com/Themesses/blue-images/blob/main/estherperel.png?raw=true" alt="this" style="max-width: 500px";/>
+                    <img src="https://github.com/Themesses/blue-images/blob/main/estherperel.png?raw=true" alt="Esther Perel" style="max-width: 500px"/>
                     <p>Esther Perel</p>
                 </a>           
             </div>
@@ -850,9 +839,240 @@
                     <h2>GLCx Momentum</h2>
                     <p>GLCx Momentum 2021 is the catalyst you need to build momentum and grow beyond your personal limits</p>
                 </div>
-                <div class="momentum__carousel-wrapper">
-
-                </div>
+            </div>
+            <div class="momentum__carousel-wrapper">
+            <section class="momentum__carousel" aria-lable="Gallery">
+                <ol class="momentum__carousel__viewport">
+                    <li id="momentum__carousel__slide1" tabindex="0" class="momentum__carousel__slide">
+                       <div class="momentum__carousel__snapper">
+                               <a href="#momentum__carousel__slide15"class="momentum__carousel__prev">To to previou slide</a>
+                               <a href="#momentum__carousel__slide1" class=momentum__carousel__slide-content>
+                                    <img src="https://github.com/Themesses/blue-images/blob/main/jesseitzler.png?raw=true" alt="Jesse Itzler" style="max-width: 500px"/>
+                                    <h3>Jesse Itzler</h3>
+                                    <a href="#momentum__carousel__slide3" class="momentum__carousel__next">Go to next slide</a>
+                                </a>
+                       </div>
+                    </li>
+                    <li id="momentum__carousel__slide2" tabindex="0" class="momentum__carousel__slide">
+                       <div class="momentum__carousel__snapper">
+                               <a href="#momentum__carousel__slide1"class="momentum__carousel__prev">To to previou slide</a>
+                               <a href="#momentum__carousel__slide2" class=momentum__carousel__slide-content>
+                                    <img src="https://github.com/Themesses/blue-images/blob/main/sarablakely.png?raw=true" alt="Sara Blakely" style="max-width: 500px"/>
+                                    <h3>Sara Blakely</h3>
+                                    <p> A conversation with Sara Blakely + Interview with Sara and Jesse</p>
+                                    <a href="#momentum__carousel__slide2" class="momentum__carousel__next">Go to next slide</a>
+                                </a>
+                       </div>
+                    </li>
+                    <li id="momentum__carousel__slide3" tabindex="0" class="momentum__carousel__slide">
+                       <div class="momentum__carousel__snapper">
+                               <a href="#momentum__carousel__slide1"class="momentum__carousel__prev">To to previou slide</a>
+                               <a href="#momentum__carousel__slide3" class=momentum__carousel__slide-content>
+                                    <img src="https://github.com/Themesses/blue-images/blob/main/sethgodin.png?raw=true" alt="Seth Godin" style="max-width: 500px"/>
+                                    <h3>Seth Godin</h3>
+                                    <p>Work That Matters for People Who Care: In Search of Our Practice</p>
+                                    <a href="#momentum__carousel__slide4" class="momentum__carousel__next">Go to next slide</a>
+                                </a>
+                       </div>
+                    </li>
+                    <li id="momentum__carousel__slide4" tabindex="0" class="momentum__carousel__slide">
+                       <div class="momentum__carousel__snapper">
+                               <a href="#momentum__carousel__slide3"class="momentum__carousel__prev">To to previou slide</a>
+                               <a href="#momentum__carousel__slide4" class=momentum__carousel__slide-content>
+                                    <img src="https://github.com/Themesses/blue-images/blob/main/jinahie.png?raw=true" alt="Jinahie" style="max-width: 500px"/>
+                                    <h3>JINAHIE</h3>
+                                    <p> A Heart to Heart</p>
+                                    <a href="#momentum__carousel__slide5" class="momentum__carousel__next">Go to next slide</a>
+                                </a>
+                       </div>
+                    </li>
+                    <li id="momentum__carousel__slide5" tabindex="0" class="momentum__carousel__slide">
+                       <div class="momentum__carousel__snapper">
+                               <a href="#momentum__carousel__slide4"class="momentum__carousel__prev">To to previou slide</a>
+                               <a href="#momentum__carousel__slide5" class=momentum__carousel__slide-content>
+                                    <img src="https://github.com/Themesses/blue-images/blob/main/jesseitzler.png?raw=true" alt="Jesse Itzler" style="max-width: 500px"/>
+                                    <h3>Sara Blakely</h3>
+                                    <p> A conversation with Sara Blakely + Interview with Sara and Jesse</p>
+                                    <a href="#momentum__carousel__slide6" class="momentum__carousel__next">Go to next slide</a>
+                                </a>
+                       </div>
+                    </li>
+                    <li id="momentum__carousel__slide6" tabindex="0" class="momentum__carousel__slide">
+                       <div class="momentum__carousel__snapper">
+                               <a href="#momentum__carousel__slide5"class="momentum__carousel__prev">To to previou slide</a>
+                               <a href="#momentum__carousel__slide6" class=momentum__carousel__slide-content>
+                                    <img src="https://github.com/Themesses/blue-images/blob/main/sarablakely.png?raw=true" alt="Sara Blakely" style="max-width: 500px"/>
+                                    <h3>Sara Blakely</h3>
+                                    <p> A conversation with Sara Blakely + Interview with Sara and Jesse</p>
+                                    <a href="#momentum__carousel__slide7" class="momentum__carousel__next">Go to next slide</a>
+                                </a>
+                       </div>
+                    </li>
+                    <li id="momentum__carousel__slide7" tabindex="0" class="momentum__carousel__slide">
+                       <div class="momentum__carousel__snapper">
+                               <a href="#momentum__carousel__slide6"class="momentum__carousel__prev">To to previou slide</a>
+                               <a href="#momentum__carousel__slide7" class=momentum__carousel__slide-content>
+                                    <img src="https://github.com/Themesses/blue-images/blob/main/sethgodin.png?raw=true" alt="Seth Godin" style="max-width: 500px"/>
+                                    <h3>Sara Blakely</h3>
+                                    <p>Work That Matters for People Who Care: In Search of Our Practice</p>
+                                    <a href="#momentum__carousel__slide8" class="momentum__carousel__next">Go to next slide</a>
+                                </a>
+                       </div>
+                    </li>
+                    <li id="momentum__carousel__slide8" tabindex="0" class="momentum__carousel__slide">
+                       <div class="momentum__carousel__snapper">
+                               <a href="#momentum__carousel__slide7"class="momentum__carousel__prev">To to previou slide</a>
+                               <a href="#momentum__carousel__slide8" class=momentum__carousel__slide-content>
+                                    <img src="https://github.com/Themesses/blue-images/blob/main/jinahie.png?raw=true" alt="Jinahie" style="max-width: 500px"/>
+                                    <h3>JINAHIE</h3>
+                                    <p> A Heart to Heart</p>
+                                    <a href="#momentum__carousel__slide9" class="carousel__next">Go to next slide</a>
+                                </a>
+                       </div>
+                    </li>
+                    <li id="momentum__carousel__slide9" tabindex="0" class="momentum__carousel__slide">
+                       <div class="momentum__carousel__snapper">
+                               <a href="#momentum__carousel__slide8"class="momentum__carousel__prev">To to previou slide</a>
+                               <a href="#momentum__carousel__slide9" class=momentum__carousel__slide-content>
+                                    <img src="https://github.com/Themesses/blue-images/blob/main/jesseitzler.png?raw=true" alt="Jesse Itzler" style="max-width: 500px"/>
+                                    <h3>Sara Blakely</h3>
+                                    <p> A conversation with Sara Blakely + Interview with Sara and Jesse</p>
+                                    <a href="#momentum__carousel__slide10" class="momentum__carousel__next">Go to next slide</a>
+                                </a>
+                       </div>
+                    </li>
+                    <li id="momentum__carousel__slide10" tabindex="0" class="momentum__carousel__slide">
+                       <div class="momentum__carousel__snapper">
+                               <a href="#momentum__carousel__slide9"class="momentum__carousel__prev">To to previou slide</a>
+                               <a href="#momentum__carousel__slide10" class=momentum__carousel__slide-content>
+                                    <img src="https://github.com/Themesses/blue-images/blob/main/sarablakely.png?raw=true" alt="Sara Blakely" style="max-width: 500px"/>
+                                    <h3>Sara Blakely</h3>
+                                    <p> A conversation with Sara Blakely + Interview with Sara and Jesse</p>
+                                    <a href="#momentum__carousel__slide11" class="momentum__carousel__next">Go to next slide</a>
+                                </a>
+                       </div>
+                    </li>
+                    <li id="momentum__carousel__slide11" tabindex="0" class="momentum__carousel__slide">
+                       <div class="momentum__carousel__snapper">
+                               <a href="#momentum__carousel__slide10"class="momentum__carousel__prev">To to previou slide</a>
+                               <a href="#momentum__carousel__slide11" class=momentum__carousel__slide-content>
+                                    <img src="https://github.com/Themesses/blue-images/blob/main/sethgodin.png?raw=true" alt="Seth Godin" style="max-width: 500px"/>
+                                    <h3>Sara Blakely</h3>
+                                    <p>Work That Matters for People Who Care: In Search of Our Practice</p>
+                                    <a href="#momentum__carousel__slide12" class="momentum__carousel__next">Go to next slide</a>
+                                </a>
+                       </div>
+                    </li>
+                    <li id="momentum__carousel__slide12" tabindex="0" class="momentum__carousel__slide">
+                       <div class="momentum__carousel__snapper">
+                               <a href="#momentum__carousel__slide11"class="momentum__carousel__prev">To to previou slide</a>
+                               <a href="#momentum__carousel__slide12" class=momentum__carousel__slide-content>
+                                    <img src="https://github.com/Themesses/blue-images/blob/main/jinahie.png?raw=true" alt="Jinahie" style="max-width: 500px"/>
+                                    <h3>JINAHIE</h3>
+                                    <p> A Heart to Heart</p>
+                                    <a href="#momentum__carousel__slide13" class="carousel__next">Go to next slide</a>
+                                </a>
+                       </div>
+                    </li>
+                    <li id="momentum__carousel__slide13" tabindex="0" class="momentum__carousel__slide">
+                       <div class="momentum__carousel__snapper">
+                               <a href="#momentum__carousel__slide12"class="momentum__carousel__prev">To to previou slide</a>
+                               <a href="#momentum__carousel__slide13" class=momentum__carousel__slide-content>
+                                    <img src="https://github.com/Themesses/blue-images/blob/main/sarablakely.png?raw=true" alt="Sara Blakely" style="max-width: 500px"/>
+                                    <h3>Sara Blakely</h3>
+                                    <p> A conversation with Sara Blakely + Interview with Sara and Jesse</p>
+                                    <a href="#momentum__carousel__slide14" class="momentum__carousel__next">Go to next slide</a>
+                                </a>
+                       </div>
+                    </li>
+                    <li id="momentum__carousel__slide14" tabindex="0" class="momentum__carousel__slide">
+                       <div class="momentum__carousel__snapper">
+                               <a href="#momentum__carousel__slide13"class="momentum__carousel__prev">To to previou slide</a>
+                               <a href="#momentum__carousel__slide14" class=momentum__carousel__slide-content>
+                                    <img src="https://github.com/Themesses/blue-images/blob/main/sethgodin.png?raw=true" alt="Seth Godin" style="max-width: 500px"/>
+                                    <h3>Sara Blakely</h3>
+                                    <p>Work That Matters for People Who Care: In Search of Our Practice</p>
+                                    <a href="#momentum__carousel__slide15" class="momentum__carousel__next">Go to next slide</a>
+                                </a>
+                       </div>
+                    </li>
+                    <li id="momentum__carousel__slide15" tabindex="0" class="momentum__carousel__slide">
+                       <div class="momentum__carousel__snapper">
+                               <a href="#momentum__carousel__slide14"class="momentum__carousel__prev">To to previousjjjjjjjjjjj slide</a>
+                               <a href="#momentum__carousel__slide15" class=momentum__carousel__slide-content>
+                                    <img src="https://github.com/Themesses/blue-images/blob/main/jinahie.png?raw=true" alt="Jinahie" style="max-width: 500px"/>
+                                    <h3>JINAHIE</h3>
+                                    <p> A Heart to Heart</p>
+                                    <a href="#momentum__carousel__slide1" class="carousel__next">Go to first slide</a>
+                                </a>
+                       </div>
+                    </li>
+                </ol>
+                <aside class="momentum__carousel__navigation">
+                    <ol class="momentum__carousel__navigation-list">
+                        <li class="momentum__carousel__navigation-item">
+                            <a href="#momentum__carousel__slide1" id="momentum__carousel__slide1"
+                            class="momentum__carousel__navigation-button">Go to slide 1</a>
+                        </li>
+                        <li class="momentum__carousel__navigation-item">
+                            <a href="#momentum__carousel__slide2" id="momentum__carousel__slide2"
+                            class="momentum__carousel__navigation-button">Go to slide 2</a>
+                        </li>
+                        <li class="momentum__carousel__navigation-item">
+                            <a href="#momentum__carousel__slide3" id="momentum__carousel__slide3"
+                            class="momentum__carousel__navigation-button">Go to slide 3</a>
+                        </li>
+                        <li class="momentum__carousel__navigation-item">
+                            <a href="#momentum__carousel__slide4" id="momentum__carousel__slide4"
+                            class="momentum__carousel__navigation-button">Go to slide 4</a>
+                        </li>
+                        <li class="momentum__carousel__navigation-item">
+                            <a href="#momentum__carousel__slide5" id="momentum__carousel__slide5"
+                            class="momentum__carousel__navigation-button">Go to slide 5</a>
+                        </li>
+                        <li class="momentum__carousel__navigation-item">
+                            <a href="#momentum__carousel__slide6" id="momentum__carousel__slide6"
+                            class="momentum__carousel__navigation-button">Go to slide 6</a>
+                        </li>
+                        <li class="momentum__carousel__navigation-item">
+                            <a href="#momentum__carousel__slide7" id="momentum__carousel__slide7"
+                            class="momentum__carousel__navigation-button">Go to slide 7</a>
+                        </li>
+                        <li class="momentum__carousel__navigation-item">
+                            <a href="#momentum__carousel__slide8" id="momentum__carousel__slide8"
+                            class="momentum__carousel__navigation-button">Go to slide 8</a>
+                        </li>
+                        <li class="momentum__carousel__navigation-item">
+                            <a href="#momentum__carousel__slide9" id="momentum__carousel__slide9"
+                            class="momentum__carousel__navigation-button">Go to slide 9</a>
+                        </li>
+                        <li class="momentum__carousel__navigation-item">
+                            <a href="#momentum__carousel__slide10" id="momentum__carousel__slide10"
+                            class="momentum__carousel__navigation-button">Go to slide 10</a>
+                        </li>
+                        <li class="momentum__carousel__navigation-item">
+                            <a href="#momentum__carousel__slide11" id="momentum__carousel__slide11"
+                            class="momentum__carousel__navigation-button">Go to slide 11</a>
+                        </li>
+                        <li class="momentum__carousel__navigation-item">
+                            <a href="#momentum__carousel__slide12" id="momentum__carousel__slide12"
+                            class="momentum__carousel__navigation-button">Go to slide 12</a>
+                        </li>
+                        <li class="momentum__carousel__navigation-item">
+                            <a href="#momentum__carousel__slide13" id="momentum__carousel__slide13"
+                            class="momentum__carousel__navigation-button">Go to slide 13</a>
+                        </li>
+                        <li class="momentum__carousel__navigation-item">
+                            <a href="#momentum__carousel__slide14" id="momentum__carousel__slide14"
+                            class="momentum__carousel__navigation-button">Go to slide 14</a>
+                        </li>
+                        <li class="momentum__carousel__navigation-item">
+                            <a href="#momentum__carousel__slide15" id="momentum__carousel__slide15"
+                            class="momentum__carousel__navigation-button">Go to slide 15</a>
+                        </li>
+                    </ol>
+                </aside>
+            </section>
             </div>
         </section>
         <section class="more">
