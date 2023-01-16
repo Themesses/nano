@@ -1,1 +1,1 @@
-# nano
+# Pure CSS carousel - takehome test
